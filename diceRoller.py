@@ -10,17 +10,7 @@ args = parser.parse_args()
 
 
 def diceGetter():
-    noOfDice = ""
-    dIndex = 0
-    noOfFaces = ""
-    for i in range(len(args.diceInformation)):
-        if args.diceInformation[i] != 'd':
-            noOfDice += args.diceInformation[i]
-        if args.diceInformation[i] == "d":
-            dIndex = i
-            break
-    for i in range(dIndex + 1, len(args.diceInformation)):
-        noOfFaces += args.diceInformation[i]
+    noOfDice,noOfFaces=args.diceInformation.split("d")
     noOfDice = int(noOfDice)
     noOfFaces = int(noOfFaces)
     return [noOfDice, noOfFaces]
